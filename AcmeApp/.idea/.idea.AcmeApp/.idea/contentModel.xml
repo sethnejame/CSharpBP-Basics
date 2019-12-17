@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\seth\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\seth\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_AcmeApp.-821752481.00" t="ExcludeRecursive" />
+    <e p="C:\Users\seth\Desktop\Work\CSharpBP-Basics\AcmeApp" t="IncludeFlat">
+      <e p="Acme.Biz" t="IncludeRecursive">
+        <e p="Acme.Biz.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Vendor.cs" t="Include" />
+        <e p="VendorRepository.cs" t="Include" />
+      </e>
+      <e p="Acme.Common" t="IncludeRecursive">
+        <e p="Acme.Common.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="EmailService.cs" t="Include" />
+        <e p="LoggingService.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OperationResult.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Acme.Win" t="IncludeRecursive">
+        <e p="Acme.Win.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="VendorWin.cs" t="Include" />
+        <e p="VendorWin.Designer.cs" t="Include" />
+        <e p="VendorWin.resx" t="Include" />
+      </e>
+      <e p="Acme.Wpf" t="IncludeRecursive">
+        <e p="Acme.Wpf.csproj" t="IncludeRecursive" />
+        <e p="App.config" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="Assets" t="Include">
+          <e p="StyleLibrary.xaml" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="App.g.cs" t="Include" />
+            <e p="GeneratedInternalTypeHelper.g.cs" t="Include" />
+            <e p="MainWindow.g.cs" t="Include" />
+            <e p="Views" t="Include">
+              <e p="VendorDetailView.g.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="ViewModels" t="Include">
+          <e p="VendorDetailViewModel.cs" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="VendorDetailView.xaml" t="Include" />
+          <e p="VendorDetailView.xaml.cs" t="Include" />
+        </e>
+      </e>
+      <e p="AcmeApp.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Tests" t="Include">
+        <e p="Acme.BizTests" t="IncludeRecursive">
+          <e p="Acme.BizTests.csproj" t="IncludeRecursive" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+          <e p="VendorTests.cs" t="Include" />
+        </e>
+        <e p="Acme.CommonTests" t="IncludeRecursive">
+          <e p="Acme.CommonTests.csproj" t="IncludeRecursive" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="EmailServiceTests.cs" t="Include" />
+          <e p="LoggingServiceTests.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+    </e>
+  </component>
+</project>
