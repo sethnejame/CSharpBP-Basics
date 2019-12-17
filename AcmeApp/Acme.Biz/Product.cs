@@ -12,6 +12,18 @@ namespace Acme.Biz
     /// </summary>
     public class Product
     {
+        public Product()
+        {
+            Console.WriteLine("Product instance created. . .");
+        }
+        public Product(int productId, string productName, string description) : this()
+        {
+            this.ProductId = productId;
+            this.ProductName = productName;
+            this.Description = description;
+            
+            Console.WriteLine("Product instance has a name: " + ProductName);
+        }
         private string productName;
 
         public string ProductName
