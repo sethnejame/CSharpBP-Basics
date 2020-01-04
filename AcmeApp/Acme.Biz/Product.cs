@@ -53,10 +53,7 @@ namespace Acme.Biz
         {
             get
             {
-                if (productVendor == null)
-                {
-                    productVendor = new Vendor();
-                }
+                productVendor ??= new Vendor();
                 return productVendor;
             }
             set { productVendor = value;  }
