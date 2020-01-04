@@ -57,7 +57,15 @@ namespace Acme.Biz
                 return productVendor;
             }
             set { productVendor = value;  }
-        }    
+        }
+
+        private DateTime? availabilityDate;
+        public DateTime? AvailabilityDate
+        {
+            get => availabilityDate;
+            set => availabilityDate = value;
+        }
+
         public string SayHello()
         {
             //var vendor = new Vendor();
@@ -69,9 +77,9 @@ namespace Acme.Biz
             
             return "Hello " + ProductName +
                    " (" + ProductId + "): " +
-                   Description;
-
-           
+                   Description + " - " +
+                "Available on: " +
+                AvailabilityDate?.ToShortDateString();
         }
 
     }
