@@ -39,47 +39,53 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(15, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.Size = new System.Drawing.Size(94, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Company Name";
             // 
             // CompanyNameTextBox
             // 
-            this.CompanyNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CompanyNameTextBox.Location = new System.Drawing.Point(13, 30);
+            this.CompanyNameTextBox.Anchor =
+                ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top |
+                                                        System.Windows.Forms.AnchorStyles.Left) |
+                                                       System.Windows.Forms.AnchorStyles.Right)));
+            this.CompanyNameTextBox.Location = new System.Drawing.Point(15, 35);
             this.CompanyNameTextBox.Name = "CompanyNameTextBox";
-            this.CompanyNameTextBox.Size = new System.Drawing.Size(275, 20);
+            this.CompanyNameTextBox.Size = new System.Drawing.Size(320, 23);
             this.CompanyNameTextBox.TabIndex = 1;
             // 
             // EmailTextBox
             // 
-            this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailTextBox.Location = new System.Drawing.Point(16, 71);
+            this.EmailTextBox.Anchor =
+                ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top |
+                                                        System.Windows.Forms.AnchorStyles.Left) |
+                                                       System.Windows.Forms.AnchorStyles.Right)));
+            this.EmailTextBox.Location = new System.Drawing.Point(19, 82);
             this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(275, 20);
+            this.EmailTextBox.Size = new System.Drawing.Size(320, 23);
             this.EmailTextBox.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 54);
+            this.label2.Location = new System.Drawing.Point(19, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.Size = new System.Drawing.Size(84, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "Email Address:";
             // 
             // CancelChangesButton
             // 
-            this.CancelChangesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancelChangesButton.Anchor =
+                ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom |
+                                                       System.Windows.Forms.AnchorStyles.Right)));
             this.CancelChangesButton.CausesValidation = false;
             this.CancelChangesButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CancelChangesButton.Location = new System.Drawing.Point(214, 143);
+            this.CancelChangesButton.Location = new System.Drawing.Point(250, 165);
             this.CancelChangesButton.Name = "CancelChangesButton";
-            this.CancelChangesButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelChangesButton.Size = new System.Drawing.Size(87, 27);
             this.CancelChangesButton.TabIndex = 4;
             this.CancelChangesButton.Text = "Cancel";
             this.CancelChangesButton.UseVisualStyleBackColor = true;
@@ -87,11 +93,13 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveButton.Anchor =
+                ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom |
+                                                       System.Windows.Forms.AnchorStyles.Right)));
             this.SaveButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.SaveButton.Location = new System.Drawing.Point(133, 143);
+            this.SaveButton.Location = new System.Drawing.Point(155, 165);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.Size = new System.Drawing.Size(87, 27);
             this.SaveButton.TabIndex = 5;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -100,22 +108,21 @@
             // VendorWin
             // 
             this.AcceptButton = this.SaveButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 178);
+            this.ClientSize = new System.Drawing.Size(351, 205);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.CancelChangesButton);
             this.Controls.Add(this.EmailTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CompanyNameTextBox);
             this.Controls.Add(this.label1);
-            this.MinimumSize = new System.Drawing.Size(301, 187);
+            this.MinimumSize = new System.Drawing.Size(348, 210);
             this.Name = "VendorWin";
             this.Text = "Vendor Detail";
             this.Load += new System.EventHandler(this.Vendor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

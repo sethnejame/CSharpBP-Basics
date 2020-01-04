@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Acme.Common;
 
 namespace Acme.Biz
 {   
@@ -15,6 +16,7 @@ namespace Acme.Biz
         public Product()
         {
             Console.WriteLine("Product instance created. . .");
+            this.ProductVendor = new Vendor();
         }
         public Product(int productId, string productName, string description) : this()
         {
@@ -45,11 +47,27 @@ namespace Acme.Biz
             get { return productId; }
             set { productId = value; }
         }
+
+        private Vendor productVendor;
+        public Vendor ProductVendor
+        {
+            get { return productVendor; }
+            set { productVendor = value;  }
+        }    
         public string SayHello()
         {
+            //var vendor = new Vendor();
+            //vendor.SendWelcomeEmail("Message from Hell");
+            
+            var emailService = new EmailService();
+            emailService.SendMessage("You're fired!", this.ProductName, "sethnejame@gmail.com");
+            var result = LoggingService.LogAction("saying hello");
+            
             return "Hello " + ProductName +
                    " (" + ProductId + "): " +
                    Description;
+
+           
         }
 
     }
