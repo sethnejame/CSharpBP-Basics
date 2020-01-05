@@ -84,22 +84,84 @@ namespace Acme.Biz.Tests
         public void MinimumPriceBulkTest()
         {
             // Arrange
-            Product bulkProduct = new Product(1, "Bulk Tools", "Lots of tools");       
+            var bulkProduct = new Product(1, "Bulk Tools", "Lots of tools");       
             var expected = 1.99m;
             // Act
             var actual = bulkProduct.MinimumPrice;
             // Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
         public void MinimumPriceTest()
         {
             // Arrange
-            Product regularProduct = new Product();       
+            var regularProduct = new Product();       
             var expected = 0.96m;
             // Act
             var actual = regularProduct.MinimumPrice;
             // Assert
             Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void ProductNameFormattingTest()
+        {
+            // Arrange
+            var productNameSetWithSpaces = new Product();
+            productNameSetWithSpaces.ProductName = "  Skull Smasher  ";
+            
+            var expected = "Skull Smasher";
+            // Act
+            var actual = productNameSetWithSpaces.ProductName;
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void ProductNameTooShortTest()
+        {
+            // Arrange
+            var shortProductName = new Product();
+            shortProductName.ProductName = "Ab";
+
+            string expected = null;
+            string expectedMessage = "Product Name must be longer than 2 characters and shorter than 20 characters.";
+            // Act
+            string actual = shortProductName.ProductName;
+            string actualMessage = shortProductName.ValidationNessage;
+            // Assert
+            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expectedMessage, actualMessage);
+        }
+        [TestMethod()]
+        public void ProductNameTooLongTest()
+        {
+            // Arrange
+            var longProductName = new Product();
+            longProductName.ProductName = "Some Really Long Name That is Completely Ridiculous";
+
+            string expected = null;
+            string expectedMessage = "Product Name must be longer than 2 characters and shorter than 20 characters.";
+            // Act
+            string actual = longProductName.ProductName;
+            string actualMessage = longProductName.ValidationNessage;
+            // Assert
+            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expectedMessage, actualMessage);
+        }
+        [TestMethod()]
+        public void ProductNameJustRight()
+        {
+            // Arrange
+            var validProductName = new Product();
+            validProductName.ProductName = "Just the right name";
+
+            string expected = "Just the right name";
+            string expectedMessage = null;
+            // Act
+            string actual = validProductName.ProductName;
+            string actualMessage = validProductName.ValidationNessage;
+            // Assert
+            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expectedMessage, actualMessage);
         }
     }
 }

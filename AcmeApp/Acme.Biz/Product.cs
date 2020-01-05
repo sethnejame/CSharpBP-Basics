@@ -39,9 +39,22 @@ namespace Acme.Biz
 
         public string ProductName
         {
-            get { return productName; }
-            set { productName = value; }
+            get { return productName?.Trim(); }
+            set
+            {
+                if (value.Length <= 2 || value.Length > 20)
+                {
+                    ValidationNessage = "Product Name must be longer than 2 characters and shorter than 20 characters.";
+                }
+                else
+                {
+                    productName = value;
+                }
+            }
         }
+
+        public string ValidationNessage { get; set; }
+
         private string description;
 
         public string Description
