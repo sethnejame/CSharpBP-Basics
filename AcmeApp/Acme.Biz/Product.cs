@@ -59,7 +59,7 @@ namespace Acme.Biz
         public string Description { get; set; } = "No description";
         private int productId;
 
-        public string Category { get; set; }
+        internal string Category { get; set; }
         public int SequenceNumber { get; set; } = 1;
         public int ProductId { get; set; } 
 
