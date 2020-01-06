@@ -163,5 +163,63 @@ namespace Acme.Biz.Tests
             Assert.AreEqual(expected, actual);
             Assert.AreEqual(expectedMessage, actualMessage);
         }
+        [TestMethod()]
+        public void Category_DefaultValue()
+        {
+            // Arrange
+            var currentProduct = new Product();
+
+            string expected = "Tools";
+ 
+            // Act
+            string actual = currentProduct.Category;
+ 
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void Description_DefaultValue()
+        {
+            // Arrange
+            var currentProduct = new Product();
+
+            string expected = "No description";
+ 
+            // Act
+            string actual = currentProduct.Description;
+ 
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void Category_NewValue()
+        {
+            // Arrange
+            var currentProduct = new Product();
+            currentProduct.Category = "Garden";
+
+            string expected = "Garden";
+ 
+            // Act
+            string actual = currentProduct.Category;
+ 
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void Description_NewValue()
+        {
+            // Arrange
+            var currentProduct = new Product();
+            currentProduct.Description = "Bathroom and kitchen cleaner";
+
+            string expected = "Bathroom and kitchen cleaner";
+ 
+            // Act
+            string actual = currentProduct.Description;
+ 
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
