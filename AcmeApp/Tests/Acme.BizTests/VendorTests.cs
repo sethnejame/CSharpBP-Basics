@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Acme.Common;
 
 namespace Acme.Biz.Tests
 {
@@ -60,16 +61,17 @@ namespace Acme.Biz.Tests
         {
             // Arrange
             var currentVendor = new Vendor();
-            var currentProduct = new Product();
-            currentProduct.ProductName = "Skull Smasher";
-
-            var expected = true;
+            var currentProduct = new Product(1, "Saw", "");
+            var expected = new OperationResult(true, 
+                "Order from Acme, Inc\r\nProduct: 1-Tools\r\nQuantity: 2" );
 
             // Act
             var actual = currentVendor.PlaceOrder(currentProduct, 2);
 
             // Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected.Success, actual.Success);
+            Assert.AreEqual(expected.Message, actual.Message);
+
         }
         [TestMethod()]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
