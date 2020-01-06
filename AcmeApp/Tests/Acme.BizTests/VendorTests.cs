@@ -55,5 +55,50 @@ namespace Acme.Biz.Tests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        public void PlaceOrder_Success()
+        {
+            // Arrange
+            var currentVendor = new Vendor();
+            var currentProduct = new Product();
+            currentProduct.ProductName = "Skull Smasher";
+
+            var expected = true;
+
+            // Act
+            var actual = currentVendor.PlaceOrder(currentProduct, 2);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void PlaceOrder_Failure_Zero_Quantity()
+        {
+            // Arrange
+            var currentVendor = new Vendor();
+            var currentProduct = new Product();
+            currentProduct.ProductName = "Skull Smasher";
+
+            // Act
+            var actual = currentVendor.PlaceOrder(currentProduct, 0);
+
+            // Assert
+            // Expected Exception
+        }
+        
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void PlaceOrder_Failure_No_Product()
+        {
+            // Arrange
+            var currentVendor = new Vendor();
+
+            // Act
+            var actual = currentVendor.PlaceOrder(null, 42);
+
+            // Assert
+            // Expected Exception
+        }
     }
 }
