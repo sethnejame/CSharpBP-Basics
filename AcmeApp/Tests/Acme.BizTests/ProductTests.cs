@@ -221,5 +221,21 @@ namespace Acme.Biz.Tests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        public void ProductCodeLambdaConcatTest()
+        {
+            // Arrange
+            var currentProduct = new Product();
+            currentProduct.Category = "Garden";
+            currentProduct.SequenceNumber = 21;
+
+            string expected = "21-Garden";
+ 
+            // Act
+            string actual = currentProduct.ProductCode;
+ 
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

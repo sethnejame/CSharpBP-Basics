@@ -81,6 +81,8 @@ namespace Acme.Biz
             set => availabilityDate = value;
         }
 
+        public string ProductCode => this.SequenceNumber + "-" + this.Category;
+
         public string SayHello()
         {
             //var vendor = new Vendor();
