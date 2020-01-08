@@ -50,6 +50,48 @@ namespace Acme.Biz
             var operationResult = new OperationResult(success, orderText);
             return operationResult;
         }
+        /// <summary>
+        /// Sends a product order to the vendor.
+        /// </summary>
+        /// <param name="product">Product to order.</param>
+        /// <param name="quantity">Quantity of product to order</param>
+        /// <param name="deliverBy">Requested delivery date</param>
+        /// <returns></returns>
+        public OperationResult PlaceOrder(Product product, int quantity, DateTimeOffset? deliverBy)
+        {
+            if (product == null)
+                throw new ArgumentNullException(nameof(product));
+            
+            if (quantity <= 0)
+                throw new ArgumentOutOfRangeException(nameof(quantity));
+            
+            if (deliverBy <= DateTimeOffset.Now)
+                throw new ArgumentOutOfRangeException(nameof(deliverBy));
+
+            
+            var success = false;
+
+            var orderText = "Order from Acme, Inc" + System.Environment.NewLine +
+                            "Product: " + product.ProductCode +
+                            System.Environment.NewLine +
+                            "Quantity: " + quantity;
+            
+            if (deliverBy.HasValue)
+            {
+                orderText += System.Environment.NewLine +
+                             "Deliver By: " + deliverBy.Value;
+            }
+            
+            var emailService = new EmailService();
+            var confirmation = emailService.SendMessage("New Order", orderText,
+                this.Email);
+            if (confirmation.StartsWith("Message sent:"))
+            {
+                success = true;
+            }
+            var operationResult = new OperationResult(success, orderText);
+            return operationResult;
+        }
 
         /// <summary>
         /// Sends an email to welcome a new vendor.
