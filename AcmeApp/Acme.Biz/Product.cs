@@ -62,7 +62,7 @@ namespace Acme.Biz
 
         internal string Category { get; set; }
         public int SequenceNumber { get; set; } = 1;
-        public int ProductId { get; set; } 
+        public int ProductId { get; set; }
 
         private Vendor productVendor;
         public Vendor ProductVendor
@@ -83,6 +83,16 @@ namespace Acme.Biz
         }
 
         public string ProductCode => this.SequenceNumber + "-" + this.Category;
+        
+        public decimal Cost { get; set; }
+        
+        /// <summary>
+        /// Calculates the suggested retail price
+        /// </summary>
+        /// <param name="markupPercent">Percent used to mark up the cost.</param>
+        /// <returns></returns>
+        public decimal CalculateSuggestedPrice(decimal markupPercent) =>
+            this.Cost + (this.Cost * markupPercent / 100);
 
         public string SayHello()
         {

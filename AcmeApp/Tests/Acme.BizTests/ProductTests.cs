@@ -237,5 +237,20 @@ namespace Acme.Biz.Tests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        public void Calculate_Suggested_Price_Test()
+        {
+            // Arrange
+            var currentProduct = new Product();
+            currentProduct.Cost = 1M;
+
+            decimal expected = 1.20M;
+ 
+            // Act
+            decimal actual = currentProduct.CalculateSuggestedPrice(20);
+ 
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
