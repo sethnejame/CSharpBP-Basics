@@ -102,5 +102,22 @@ namespace Acme.Biz.Tests
             // Assert
             // Expected Exception
         }
+        [TestMethod()]
+        public void PlaceOrder_With_Date_Overload()
+        {
+            // Arrange
+            var currentVendor = new Vendor();
+            var currentProduct = new Product(1, "Saw", "");
+            var expected = new OperationResult(true, 
+                "Order from Acme, Inc\r\nProduct: 1-Tools\r\nQuantity: 2\r\nDeliver By: 2020-01-23");
+
+            // Act
+            var actual = currentVendor.PlaceOrder(currentProduct, 2, new DateTimeOffset(2020, 01, 23, 0, 0, 0, new TimeSpan(-7, 0, 0)));
+
+            // Assert
+            Assert.AreEqual(expected.Success, actual.Success);
+            Assert.AreEqual(expected.Message, actual.Message);
+
+        }
     }
 }

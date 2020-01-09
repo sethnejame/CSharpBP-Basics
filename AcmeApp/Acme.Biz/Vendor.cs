@@ -79,7 +79,7 @@ namespace Acme.Biz
             if (deliverBy.HasValue)
             {
                 orderText += System.Environment.NewLine +
-                             "Deliver By: " + deliverBy.Value;
+                             "Deliver By: " + deliverBy.Value.ToString("d");
             }
             
             var emailService = new EmailService();
@@ -120,7 +120,7 @@ namespace Acme.Biz
             if (deliverBy.HasValue)
             {
                 orderText += System.Environment.NewLine +
-                             "Deliver By: " + deliverBy.Value;
+                             "Deliver By: " + deliverBy.Value.ToString("d");
             }
             
             if (!String.IsNullOrWhiteSpace(instructions))
