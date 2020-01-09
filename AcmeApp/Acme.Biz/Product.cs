@@ -110,9 +110,7 @@ namespace Acme.Biz
                 AvailabilityDate?.ToShortDateString();
         }
 
-        public override string ToString()
-        {
-            return this.ProductName + " (" + this.ProductId + ") ";
-        }
+        public override string ToString() =>
+            this.ProductName + " (" + this.ProductId + ") ";
     }
 }
