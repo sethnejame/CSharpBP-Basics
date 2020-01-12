@@ -63,7 +63,7 @@ namespace Acme.Biz.Tests
             var currentVendor = new Vendor();
             var currentProduct = new Product(1, "Saw", "");
             var expected = new OperationResult(true, 
-                "Order from Acme, Inc\r\nProduct: 1-Tools\r\nQuantity: 2" );
+                "Order from Acme, Inc\r\nProduct: 1-Tools\r\nQuantity: 2\r\nOrder Instructions: standard delivery" );
 
             // Act
             var actual = currentVendor.PlaceOrder(currentProduct, 2);
@@ -109,7 +109,7 @@ namespace Acme.Biz.Tests
             var currentVendor = new Vendor();
             var currentProduct = new Product(1, "Saw", "");
             var expected = new OperationResult(true, 
-                "Order from Acme, Inc\r\nProduct: 1-Tools\r\nQuantity: 2\r\nDeliver By: 2020-01-23");
+                "Order from Acme, Inc\r\nProduct: 1-Tools\r\nQuantity: 2\r\nDeliver By: 2020-01-23\r\nOrder Instructions: standard delivery");
 
             // Act
             var actual = currentVendor.PlaceOrder(currentProduct, 2, new DateTimeOffset(2020, 01, 23, 0, 0, 0, new TimeSpan(-7, 0, 0)));
