@@ -15,7 +15,7 @@ namespace Acme.Biz
         public int VendorId { get; set; }
         public string CompanyName { get; set; }
         public string Email { get; set; }
-
+        
         /// <summary>
         /// Sends a product order to the vendor.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Acme.Biz
         /// <returns></returns>
         public OperationResult PlaceOrder(Product product, int quantity)
         {
-            return PlaceOrder(product, quantity, null, null);
+            return PlaceOrder(product, quantity);
         }
         /// <summary>
         /// Sends a product order to the vendor.
@@ -82,6 +82,24 @@ namespace Acme.Biz
                 success = true;
             }
             var operationResult = new OperationResult(success, orderText);
+            return operationResult;
+        }
+        
+        /// <summary>
+        /// Sends a product order to the vendor.
+        /// </summary>
+        /// <param name="product">Product to order.</param>
+        /// <param name="quantity">Quantity of product to order</param>
+        /// <param name="includeAddress">Is the shipping address included?</param>
+        /// <param name="sendCopy">Send an email copy of the order to the customer?</param>
+        /// <returns></returns>
+        public OperationResult PlaceOrder(Product product, int quantity, bool includeAddress, bool sendCopy)
+        {
+            var orderText = "Test";
+            if (includeAddress) orderText += " With Address"; 
+            if (sendCopy) orderText += " With Copy"; 
+            
+            var operationResult = new OperationResult(true, orderText);
             return operationResult;
         }
 

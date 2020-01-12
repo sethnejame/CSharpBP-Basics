@@ -119,5 +119,22 @@ namespace Acme.Biz.Tests
             Assert.AreEqual(expected.Message, actual.Message);
 
         }
+        [TestMethod()]
+        public void PlaceOrder_With_IncAddress_SendCopy()
+        {
+            // Arrange
+            var currentVendor = new Vendor();
+            var currentProduct = new Product(1, "Saw", "");
+            var expected = new OperationResult(true, 
+                "Test With Address With Copy");
+
+            // Act
+            var actual = currentVendor.PlaceOrder(currentProduct, 2, true, true);
+
+            // Assert
+            Assert.AreEqual(expected.Success, actual.Success);
+            Assert.AreEqual(expected.Message, actual.Message);
+
+        }
     }
 }
