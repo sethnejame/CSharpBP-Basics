@@ -129,7 +129,7 @@ namespace Acme.Biz.Tests
                 "Test With Address With Copy");
 
             // Act
-            var actual = currentVendor.PlaceOrder(currentProduct, quantity: 2, includeAddress: true, sendCopy: true);
+            var actual = currentVendor.PlaceOrder(currentProduct, quantity: 2, Vendor.IncludeAddress.Yes, Vendor.SendCopy.Yes);
 
             // Assert
             Assert.AreEqual(expected.Success, actual.Success);

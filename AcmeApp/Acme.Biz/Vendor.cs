@@ -10,8 +10,10 @@ namespace Acme.Biz
     /// <summary>
     /// Manages the vendors from whom we purchase our inventory.
     /// </summary>
-    public class Vendor 
+    public class Vendor
     {
+        public enum IncludeAddress { Yes, No };
+        public enum SendCopy { Yes, No };
         public int VendorId { get; set; }
         public string CompanyName { get; set; }
         public string Email { get; set; }
@@ -93,11 +95,11 @@ namespace Acme.Biz
         /// <param name="includeAddress">Is the shipping address included?</param>
         /// <param name="sendCopy">Send an email copy of the order to the customer?</param>
         /// <returns></returns>
-        public OperationResult PlaceOrder(Product product, int quantity, bool includeAddress, bool sendCopy)
+        public OperationResult PlaceOrder(Product product, int quantity, IncludeAddress includeAddress, SendCopy sendCopy)
         {
             var orderText = "Test";
-            if (includeAddress) orderText += " With Address"; 
-            if (sendCopy) orderText += " With Copy"; 
+            if (includeAddress == IncludeAddress.Yes) orderText += " With Address"; 
+            if (sendCopy == SendCopy.Yes) orderText += " With Copy"; 
             
             var operationResult = new OperationResult(true, orderText);
             return operationResult;
