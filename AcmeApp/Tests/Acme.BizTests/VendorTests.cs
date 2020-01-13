@@ -163,5 +163,17 @@ namespace Acme.Biz.Tests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        public void PrepDirections()
+        {
+            // Arrange
+            var currentVendor = new Vendor();
+            var expected = @"Insert \r\n to define a new line";
+            // Act
+            var actual = currentVendor.PrepareDirections();
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
