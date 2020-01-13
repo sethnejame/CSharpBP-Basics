@@ -82,7 +82,7 @@ namespace Acme.Biz
             set => availabilityDate = value;
         }
 
-        public string ProductCode => this.SequenceNumber + "-" + this.Category;
+        public string ProductCode => String.Format($"{this.SequenceNumber}-{this.Category}");
         
         public decimal Cost { get; set; }
         
