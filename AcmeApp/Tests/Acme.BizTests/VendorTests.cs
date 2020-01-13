@@ -117,7 +117,6 @@ namespace Acme.Biz.Tests
             // Assert
             Assert.AreEqual(expected.Success, actual.Success);
             Assert.AreEqual(expected.Message, actual.Message);
-
         }
         [TestMethod()]
         public void PlaceOrder_With_IncAddress_SendCopy()
@@ -134,7 +133,6 @@ namespace Acme.Biz.Tests
             // Assert
             Assert.AreEqual(expected.Success, actual.Success);
             Assert.AreEqual(expected.Message, actual.Message);
-
         }
         [TestMethod()]
         public void PlaceOrder_NoDeliveryDate()
@@ -151,7 +149,19 @@ namespace Acme.Biz.Tests
             // Assert
             Assert.AreEqual(expected.Success, actual.Success);
             Assert.AreEqual(expected.Message, actual.Message);
+        }
+        [TestMethod()]
+        public void ToString_Override()
+        {
+            // Arrange
+            var currentVendor = new Vendor();
+            currentVendor.CompanyName = "Bob's Burgers";
+            var expected = "Vendor: Bob's Burgers";
+            // Act
+            var actual = currentVendor.ToString();
 
+            // Assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }
